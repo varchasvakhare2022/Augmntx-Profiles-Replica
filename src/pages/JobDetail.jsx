@@ -134,80 +134,100 @@ Apex and Lightning development`
         </div>
 
         {/* Main Content */}
-        <div className="bg-white rounded-lg shadow-sm p-8">
-          {/* Share Button */}
-          <div className="flex justify-end mb-4">
-            <button className="flex items-center gap-2 text-blue-600 border border-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
-              <FaShare />
-              Share
-            </button>
-          </div>
+        <div className="bg-white rounded-lg shadow-sm p-8 md:p-12 relative">
+          {/* Share Button - Top Right */}
+          <button className="absolute top-6 right-6 text-blue-600 border border-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-colors">
+            <FaShare size={18} />
+          </button>
 
-          {/* Job Title */}
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{job.title}</h1>
+          {/* Job Title - Centered */}
+          <h1 className="text-center text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+            {job.title}
+          </h1>
 
-          {/* Job Meta Info */}
-          <div className="flex flex-wrap gap-6 text-gray-600 mb-6">
+          {/* Job Meta Info - Centered */}
+          <div className="flex flex-wrap justify-center items-center gap-4 text-gray-500 mb-12 text-sm">
             <div className="flex items-center gap-2">
-              <FaBriefcase className="text-gray-400" />
+              <FaBriefcase className="text-gray-400" size={14} />
               <span>{job.type}</span>
             </div>
+            <span className="text-gray-300">•</span>
             <div className="flex items-center gap-2">
-              <FaMapMarkerAlt className="text-gray-400" />
+              <FaMapMarkerAlt className="text-gray-400" size={14} />
               <span>{job.location}</span>
             </div>
+            <span className="text-gray-300">•</span>
             <div className="flex items-center gap-2">
               <span className="text-gray-400">🏢</span>
               <span>Remote</span>
             </div>
+            <span className="text-gray-300">•</span>
             <div className="flex items-center gap-2">
               <span className="text-gray-400">⏱️</span>
               <span>{job.experience}</span>
             </div>
           </div>
 
-          {/* Mandatory Technical Skills */}
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Mandatory Technical Skills:</h2>
-            <div className="flex flex-wrap gap-2">
-              {job.skills.map(skill => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 bg-blue-100 text-blue-700 text-sm rounded-full font-medium"
-                >
-                  {skill}
-                </span>
-              ))}
+          {/* Mandatory Technical Skills and Apply Section */}
+          <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-8">
+            <div className="flex-1">
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">Mandatory Technical Skills:</h2>
+              <div className="flex flex-wrap gap-2">
+                {job.skills.map(skill => (
+                  <span
+                    key={skill}
+                    className="px-4 py-2 bg-blue-100 text-blue-700 text-sm rounded-md font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            {/* Apply and Match Section */}
+            <div className="flex items-center gap-6">
+              <div className="text-center">
+                <div className="w-24 h-24 rounded-full bg-gray-200 mb-2 mx-auto"></div>
+                <p className="text-sm text-gray-600 font-medium">Match %</p>
+                <p className="text-xs text-gray-500">unavailable</p>
+              </div>
+              <Link
+                to="/login"
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center gap-2 whitespace-nowrap"
+              >
+                Apply
+                <span>→</span>
+              </Link>
             </div>
           </div>
 
           {/* Job Description */}
           <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Job Description</h2>
-            <div className="text-gray-700 whitespace-pre-line leading-relaxed">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Job Description</h2>
+            <div className="text-gray-600 whitespace-pre-line leading-relaxed text-base">
               {job.description}
             </div>
           </div>
 
           {/* Job ID */}
-          <div className="mb-8 text-gray-600">
-            <strong>{job.uniqueId}</strong>
+          <div className="mb-8 text-gray-700 font-semibold">
+            {job.uniqueId}
           </div>
 
           {/* Interview Details */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 py-6 border-t border-b border-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 py-6 border-t border-gray-200">
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">Interview Rounds:</h3>
-              <p className="text-gray-700">{job.interviewRounds}</p>
+              <p className="text-gray-600">{job.interviewRounds}</p>
             </div>
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">Valid Through:</h3>
-              <p className="text-gray-700">{job.validThrough}</p>
+              <p className="text-gray-600">{job.validThrough}</p>
             </div>
           </div>
 
-          {/* Apply Section */}
-          <div className="flex items-center gap-6">
+          {/* Bottom Apply Section */}
+          <div className="flex items-center gap-6 pt-6">
             <Link
               to="/login"
               className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center gap-2"
@@ -217,7 +237,7 @@ Apex and Lightning development`
             </Link>
             <div className="text-center">
               <div className="w-20 h-20 rounded-full bg-gray-200 mb-2 mx-auto"></div>
-              <p className="text-sm text-gray-600">Match %</p>
+              <p className="text-sm text-gray-600 font-medium">Match %</p>
               <p className="text-xs text-gray-500">unavailable</p>
             </div>
           </div>
