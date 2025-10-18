@@ -9,6 +9,7 @@ import Register from "./pages/Register";
 import ForgotPwd from "./pages/ForgotPwd";
 import Skills from "./pages/Skills";
 import RemoteJobs from "./pages/RemoteJobs";
+import JobDetail from "./pages/JobDetail";
 
 const App = () => {
    return (
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/hire" element={<Register />} />
             <Route path="/forgot-password" element={<ForgotPwd />} />
             <Route path="/remote-jobs" element={<RemoteJobs />} />
+            <Route path="/remote-jobs/:jobId" element={<JobDetail />} />
          </Routes>
          <FixedButtons />
          <Footer />

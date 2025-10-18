@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { FaCalendarAlt, FaCode, FaChartBar, FaMapMarkerAlt, FaBriefcase, FaShare, FaSearch } from 'react-icons/fa'
 
 const RemoteJobs = () => {
@@ -1069,7 +1070,9 @@ const RemoteJobs = () => {
                   </button>
                   
                   {/* Job Title */}
-                  <h3 className="text-xl font-semibold text-blue-600 mb-3 pr-8">{job.title}</h3>
+                  <Link to={`/remote-jobs/${job.id}`}>
+                    <h3 className="text-xl font-semibold text-blue-600 mb-3 pr-8 hover:text-blue-700 cursor-pointer transition-colors">{job.title}</h3>
+                  </Link>
                   
                   {/* Experience */}
                   <p className="text-gray-500 text-base mb-4">{job.experience}</p>
