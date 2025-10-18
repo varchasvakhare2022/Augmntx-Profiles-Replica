@@ -57,42 +57,42 @@ const Skills = () => {
             <div className='flex flex-col lg:flex-row gap-8'>
                {/* Left Sidebar */}
                <aside className='lg:w-[280px] flex-shrink-0'>
-                  <div className='bg-white rounded-lg p-6 mb-6'>
-                     <h3 className='text-lg font-semibold text-gray-800 mb-4'>Hiring resources</h3>
+                  <div className='mb-10'>
+                     <h3 className='text-xl font-semibold text-gray-900 mb-4'>Hiring resources</h3>
                      <ul className='space-y-3'>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm'>
+                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
                               Guide to Hiring devs <span className='ml-2 text-gray-400'>→</span>
                            </a>
                         </li>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm'>
+                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
                               Job Template <span className='ml-2 text-gray-400'>→</span>
                            </a>
                         </li>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm'>
+                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
                               Interview Questions <span className='ml-2 text-gray-400'>→</span>
                            </a>
                         </li>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm'>
+                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
                               Common Mistakes <span className='ml-2 text-gray-400'>→</span>
                            </a>
                         </li>
                      </ul>
                   </div>
 
-                  <div className='bg-white rounded-lg p-6'>
-                     <h3 className='text-lg font-semibold text-gray-800 mb-4'>Need help?</h3>
+                  <div className='mb-10'>
+                     <h3 className='text-xl font-semibold text-gray-900 mb-4'>Need help?</h3>
                      <ul className='space-y-3'>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm'>
+                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
                               Book a meeting <span className='ml-2 text-gray-400'>→</span>
                            </a>
                         </li>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm'>
+                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
                               Chat with an expert <span className='ml-2 text-gray-400'>→</span>
                            </a>
                         </li>
