@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
+import { FiDownload, FiExternalLink } from 'react-icons/fi'
 
 const Skills = () => {
    const { skill } = useParams()
@@ -121,10 +122,12 @@ const Skills = () => {
                            return (
                               <div 
                                  key={id} 
-                                 className='bg-[#f9fafb] rounded-lg p-6 hover:shadow-md transition-shadow cursor-pointer border border-[#e5e7eb]'
-                                 onClick={() => goUser(profile_url, unique_id)}
+                                 className='bg-[#f9fafb] rounded-lg p-6 hover:shadow-md transition-shadow border border-[#e5e7eb] flex flex-col'
                               >
-                                 <div className='flex gap-4 mb-4'>
+                                 <div 
+                                    className='flex gap-4 mb-4 cursor-pointer'
+                                    onClick={() => goUser(profile_url, unique_id)}
+                                 >
                                     <div className='w-24 h-24 flex-shrink-0'>
                                        <img
                                           src={
@@ -159,21 +162,49 @@ const Skills = () => {
                                     </div>
                                  </div>
                                  
-                                 <p className='text-[14px] text-[#4a5568] mb-3 leading-relaxed'>
-                                    {bio || 'No bio available'}
-                                 </p>
-                                 
-                                 {profile_industries && profile_industries.length > 0 && (
-                                    <p className='text-[13px] text-[#4a5568]'>
-                                       <span className='font-medium'>Industries: </span>
-                                       {profile_industries.slice(0, 3).map((industry, idx) => (
-                                          <span key={idx}>
-                                             <span className='underline'>{industry}</span>
-                                             {idx < profile_industries.slice(0, 3).length - 1 && ', '}
-                                          </span>
-                                       ))}
+                                 <div 
+                                    className='cursor-pointer'
+                                    onClick={() => goUser(profile_url, unique_id)}
+                                 >
+                                    <p className='text-[14px] text-[#4a5568] mb-3 leading-relaxed'>
+                                       {bio || 'No bio available'}
                                     </p>
-                                 )}
+                                    
+                                    {profile_industries && profile_industries.length > 0 && (
+                                       <p className='text-[13px] text-[#4a5568] mb-4'>
+                                          <span className='font-medium'>Industries: </span>
+                                          {profile_industries.slice(0, 3).map((industry, idx) => (
+                                             <span key={idx}>
+                                                <span className='underline'>{industry}</span>
+                                                {idx < profile_industries.slice(0, 3).length - 1 && ', '}
+                                             </span>
+                                          ))}
+                                       </p>
+                                    )}
+                                 </div>
+
+                                 <div className='flex items-center justify-center gap-6 mt-auto pt-4 border-t border-gray-200'>
+                                    <button 
+                                       onClick={(e) => {
+                                          e.stopPropagation()
+                                          goUser(profile_url, unique_id)
+                                       }}
+                                       className='text-[#5271FF] hover:text-blue-700 text-[14px] flex items-center gap-2 transition-colors'
+                                    >
+                                       <FiExternalLink className='text-[14px]' />
+                                       Hire {first_name} {last_name}
+                                    </button>
+                                    <button 
+                                       onClick={(e) => {
+                                          e.stopPropagation()
+                                          // Add download functionality here
+                                       }}
+                                       className='text-[#5271FF] hover:text-blue-700 text-[14px] flex items-center gap-2 transition-colors'
+                                    >
+                                       <FiDownload className='text-[14px]' />
+                                       Download PDF
+                                    </button>
+                                 </div>
                               </div>
                            )
                         })}
