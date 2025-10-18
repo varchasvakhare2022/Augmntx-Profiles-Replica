@@ -933,11 +933,11 @@ const RemoteJobs = () => {
                   Years of Experience
                 </h3>
                 <div className="px-2">
-                  <div className="relative pt-2 pb-2">
+                  <div className="relative pt-3 pb-3">
                     {/* Dual Range Slider */}
-                    <div className="relative h-2 bg-gray-200 rounded-lg">
+                    <div className="relative h-1 bg-gray-300 rounded-full">
                       <div 
-                        className="absolute h-2 bg-blue-600 rounded-lg"
+                        className="absolute h-1 bg-blue-600 rounded-full"
                         style={{
                           left: `${(experienceRange[0] / 30) * 100}%`,
                           width: `${((experienceRange[1] - experienceRange[0]) / 30) * 100}%`
@@ -1211,8 +1211,8 @@ const RemoteJobs = () => {
         .range-slider-thumb {
           position: absolute;
           width: 100%;
-          height: 8px;
-          top: 0;
+          height: 4px;
+          top: 2px;
           -webkit-appearance: none;
           appearance: none;
           background: transparent;
@@ -1231,36 +1231,36 @@ const RemoteJobs = () => {
         .range-slider-thumb::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
-          width: 18px;
-          height: 18px;
+          width: 20px;
+          height: 20px;
           border-radius: 50%;
-          background: #5271FF;
+          background: white;
           cursor: pointer;
           pointer-events: all;
-          border: 3px solid white;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          border: 2px solid #e5e7eb;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         }
         
         .range-slider-thumb::-moz-range-thumb {
-          width: 18px;
-          height: 18px;
+          width: 20px;
+          height: 20px;
           border-radius: 50%;
-          background: #5271FF;
+          background: white;
           cursor: pointer;
           pointer-events: all;
-          border: 3px solid white;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          border: 2px solid #e5e7eb;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.15);
         }
         
         .range-slider-thumb::-webkit-slider-runnable-track {
           width: 100%;
-          height: 8px;
+          height: 4px;
           background: transparent;
         }
         
         .range-slider-thumb::-moz-range-track {
           width: 100%;
-          height: 8px;
+          height: 4px;
           background: transparent;
         }
       `}</style>
