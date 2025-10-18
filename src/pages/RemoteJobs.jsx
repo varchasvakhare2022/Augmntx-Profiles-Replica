@@ -1208,27 +1208,34 @@ const RemoteJobs = () => {
       )}
       
       <style jsx>{`
+        .slider-thumb-left,
+        .slider-thumb-right {
+          pointer-events: none;
+        }
+        
         .slider-thumb-left::-webkit-slider-thumb,
         .slider-thumb-right::-webkit-slider-thumb {
           appearance: none;
+          pointer-events: auto;
           height: 20px;
           width: 20px;
           border-radius: 50%;
-          background: #d1d5db;
+          background: #5271FF;
           cursor: pointer;
-          border: 2px solid #ffffff;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          border: 3px solid #ffffff;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
         .slider-thumb-left::-moz-range-thumb,
         .slider-thumb-right::-moz-range-thumb {
+          pointer-events: auto;
           height: 20px;
           width: 20px;
           border-radius: 50%;
-          background: #d1d5db;
+          background: #5271FF;
           cursor: pointer;
-          border: 2px solid #ffffff;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          border: 3px solid #ffffff;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
         .slider-thumb-left::-webkit-slider-track,
@@ -1244,6 +1251,16 @@ const RemoteJobs = () => {
           height: 8px;
           border-radius: 4px;
           border: none;
+        }
+        
+        .slider-thumb-right {
+          position: relative;
+          z-index: 4;
+        }
+        
+        .slider-thumb-left {
+          position: relative;
+          z-index: 3;
         }
       `}</style>
     </div>
