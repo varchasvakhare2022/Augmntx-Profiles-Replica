@@ -933,11 +933,11 @@ const RemoteJobs = () => {
                   Years of Experience
                 </h3>
                 <div className="px-2">
-                  <div className="relative pt-3 pb-3">
+                  <div className="relative py-4">
                     {/* Dual Range Slider */}
-                    <div className="relative h-1 bg-gray-300 rounded-full">
+                    <div className="relative h-1 bg-gray-200 rounded-full">
                       <div 
-                        className="absolute h-1 bg-blue-600 rounded-full"
+                        className="absolute h-1 bg-blue-500 rounded-full"
                         style={{
                           left: `${(experienceRange[0] / 30) * 100}%`,
                           width: `${((experienceRange[1] - experienceRange[0]) / 30) * 100}%`
@@ -1212,12 +1212,14 @@ const RemoteJobs = () => {
           position: absolute;
           width: 100%;
           height: 4px;
-          top: 2px;
+          top: 0;
           -webkit-appearance: none;
           appearance: none;
           background: transparent;
           pointer-events: none;
           outline: none;
+          margin: 0;
+          padding: 0;
         }
         
         .range-slider-min {
@@ -1231,37 +1233,48 @@ const RemoteJobs = () => {
         .range-slider-thumb::-webkit-slider-thumb {
           -webkit-appearance: none;
           appearance: none;
-          width: 20px;
-          height: 20px;
+          width: 16px;
+          height: 16px;
           border-radius: 50%;
-          background: white;
+          background: #ffffff;
           cursor: pointer;
           pointer-events: all;
-          border: 2px solid #e5e7eb;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+          border: 2px solid #d1d5db;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+          margin-top: -6px;
         }
         
         .range-slider-thumb::-moz-range-thumb {
-          width: 20px;
-          height: 20px;
+          width: 16px;
+          height: 16px;
           border-radius: 50%;
-          background: white;
+          background: #ffffff;
           cursor: pointer;
           pointer-events: all;
-          border: 2px solid #e5e7eb;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+          border: 2px solid #d1d5db;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
         
         .range-slider-thumb::-webkit-slider-runnable-track {
           width: 100%;
           height: 4px;
           background: transparent;
+          border: none;
         }
         
         .range-slider-thumb::-moz-range-track {
           width: 100%;
           height: 4px;
           background: transparent;
+          border: none;
+        }
+        
+        .range-slider-thumb:hover::-webkit-slider-thumb {
+          border-color: #9ca3af;
+        }
+        
+        .range-slider-thumb:hover::-moz-range-thumb {
+          border-color: #9ca3af;
         }
       `}</style>
     </div>
