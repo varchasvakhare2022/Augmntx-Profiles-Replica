@@ -227,7 +227,7 @@ Apex and Lightning development`
           </div>
 
           {/* Bottom Apply Section */}
-          <div className="flex items-center gap-6 pt-6">
+          <div className="flex items-start gap-8 pt-6">
             <Link
               to="/login"
               className="bg-[#5271FF] text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center gap-2 text-base"
