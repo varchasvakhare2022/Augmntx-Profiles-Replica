@@ -8,6 +8,7 @@ import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
 import ForgotPwd from "./pages/ForgotPwd";
 import Skills from "./pages/Skills";
+import RemoteJobs from "./pages/RemoteJobs";
 
 const App = () => {
    return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/login" element={<LogIn />} />
             <Route path="/hire" element={<Register />} />
             <Route path="/forgot-password" element={<ForgotPwd />} />
+            <Route path="/remote-jobs" element={<RemoteJobs />} />
          </Routes>
          <FixedButtons />
          <Footer />

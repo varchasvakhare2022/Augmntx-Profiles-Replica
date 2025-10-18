@@ -56,9 +56,9 @@ const Header = () => {
                <div className='lg:hidden flex items-center gap-5'>
                   <ul>
                      <li>
-                        <a href="#" className=' hidden md:block relative text-white bg-[#5271FF] rounded-[25px] text-[14px] font-[700] py-[12px] px-[20px] btn-hire' >
+                        <Link to="/hire" className=' hidden md:block relative text-white bg-[#5271FF] rounded-[25px] text-[14px] font-[700] py-[12px] px-[20px] btn-hire' >
                            Hire Talent
-                        </a>
+                        </Link>
                      </li>
                   </ul>
                   <FaBars
@@ -121,14 +121,14 @@ const Header = () => {
                      </ul>
                   </li>
                   <li>
-                     <a href="" className='text-[#343F52] text-[16px] font-[700] py-[24px] px-[20px] transition ease-in-out delay-100 hover:text-[#5271ff]' >
+                     <Link to="/profiles" className='text-[#343F52] text-[16px] font-[700] py-[24px] px-[20px] transition ease-in-out delay-100 hover:text-[#5271ff]' >
                         Find Dev
-                     </a>
+                     </Link>
                   </li>
                   <li>
-                     <a href="" className='text-[#343F52] text-[14px] font-[700] py-[24px] px-[20px] transition ease-in-out delay-100 hover:text-[#5271ff]' >
+                     <Link to="/remote-jobs" className='text-[#343F52] text-[14px] font-[700] py-[24px] px-[20px] transition ease-in-out delay-100 hover:text-[#5271ff]' >
                         Remote Jobs
-                     </a>
+                     </Link>
                   </li>
                   <li>
                      <Link to="/hire" className=' relative text-white bg-[#5271FF] rounded-full text-[14px] font-[700] py-[12px] px-[25px] btn-hire' >

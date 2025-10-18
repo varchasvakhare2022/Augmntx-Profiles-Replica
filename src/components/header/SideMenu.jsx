@@ -85,14 +85,22 @@ const SideMenu = ({ mobileMenu, setMobileMenu }) => {
                   </ul>
                </li>
                <li className='mb-[10px]'>
-                  <a href="" className=' block  text-[16px] font-[700] py-[10px]' >
+                  <Link 
+                     to="/profiles" 
+                     onClick={closeSideMenu}
+                     className=' block  text-[16px] font-[700] py-[10px]' 
+                  >
                      Find Dev
-                  </a>
+                  </Link>
                </li>
                <li className='mb-[10px]'>
-                  <a href="" className=' block text-[14px] font-[700] py-[10px]' >
+                  <Link 
+                     to="/remote-jobs" 
+                     onClick={closeSideMenu}
+                     className=' block text-[14px] font-[700] py-[10px]' 
+                  >
                      Remote Jobs
-                  </a>
+                  </Link>
                </li>
                <li className='mb-[25px]'>
                   <Link
@@ -104,7 +112,7 @@ const SideMenu = ({ mobileMenu, setMobileMenu }) => {
                   </Link>
                </li>
                <li className='mb-[25px]'>
-                  <a href="https://augmntx.com/hire" className="block mb-1" >Hire Dev</a>
+                  <Link to="/hire" onClick={closeSideMenu} className="block mb-1" >Hire Dev</Link>
                   <a href="mailto:hello@augmntx.com" className="block mb-1 transition delay-150 hover:text-[#5271FF]">hello@augmntx.com </a>
                   <a href="tel:+919820045154" className="block mb-1 transition delay-150 hover:text-[#5271FF]">+91 982 004 5154 </a>
                </li>

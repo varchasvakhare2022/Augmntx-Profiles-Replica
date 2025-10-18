@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react'
 const FixedButtons = () => {
    const [show, setShow] = useState(false)
    const [scroll, setScroll] = useState(0)
+   const [isOverFooter, setIsOverFooter] = useState(false)
 
    const showButton = () => {
       if (window.scrollY > 100) {
@@ -30,12 +31,26 @@ const FixedButtons = () => {
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
       const lastValue = Math.round((ScrollValue * 100) / height)
       setScroll(lastValue)
+      
+      // Check if button is over footer
+      const footer = document.querySelector('footer')
+      if (footer) {
+         const footerRect = footer.getBoundingClientRect()
+         const windowHeight = window.innerHeight
+         // Button is typically at bottom 10% of screen (bottom-[10%])
+         const buttonPosition = windowHeight * 0.9
+         setIsOverFooter(footerRect.top < buttonPosition && footerRect.bottom > 0)
+      }
    }
 
 
    useEffect(() => {
       window.addEventListener('scroll', showButton)
       window.addEventListener('scroll', calcScroll)
+      return () => {
+         window.removeEventListener('scroll', showButton)
+         window.removeEventListener('scroll', calcScroll)
+      }
    }, [])
 
    const style = {
@@ -72,8 +87,8 @@ const FixedButtons = () => {
             </div>
          </div>
          <div onClick={scrollToTop} style={style} className={`cursor-pointer fixed z-50 bottom-[10%] transition-all ${show ? 'right-9' : 'right-[-10%]'}  w-11 h-11 hidden md:grid lg:grid  place-items-center rounded-full`}>
-            <span className=' relative block bg-white rounded-full p-5'>
-               <FaLongArrowAltUp className='text-[#5271ff] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] ' />
+            <span className={`relative block rounded-full p-5 ${isOverFooter ? 'bg-[#5271ff]' : 'bg-white'}`}>
+               <FaLongArrowAltUp className={`absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] transition-colors ${isOverFooter ? 'text-white' : 'text-[#5271ff]'}`} />
             </span>
          </div>
       </>
