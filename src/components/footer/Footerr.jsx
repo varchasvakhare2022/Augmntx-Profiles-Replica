@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
             <ul className='px-[15px] pb-[25px] flex flex-col gap-3' >
                <li className="text-[18px] font-[700] mb-2">
-                  Company
+                  Information
                </li>
                <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
                   <a href="#" >About Us</a>
@@ -45,10 +45,13 @@ const Footer = () => {
                <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
                   <a href="#" >Contact Us</a>
                </li>
+               <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
+                  <a href="#" >Tech Stack</a>
+               </li>
             </ul>
             <ul className='px-[15px] pb-[25px] flex flex-col gap-3' >
                <li className="text-[18px] font-[700] mb-2">
-                  For Clients
+                  AugmntX
                </li>
                <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
                   <Link to="/profiles" >
@@ -57,7 +60,7 @@ const Footer = () => {
                </li>
                <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
                   <a href="#" >
-                     Discover Talent
+                     Discover
                   </a>
                </li>
                <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
@@ -71,19 +74,29 @@ const Footer = () => {
                   </a>
                </li>
                <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
-                  <Link to="/hire" >
-                     Hire Developers
-                  </Link>
+                  <a href="#" >
+                     Augmentation Data
+                  </a>
+               </li>
+               <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
+                  <a href="#" >
+                     Status
+                  </a>
+               </li>
+               <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
+                  <a href="#" >
+                     Email Opt-Out
+                  </a>
                </li>
             </ul>
             <ul className='px-[15px] pb-[25px] flex flex-col gap-3' >
                <li className="text-[18px] font-[700] mb-2">
-                  For Talent
+                  Vendor
                </li>
                <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
-                  <Link to="/remote-jobs" >
-                     Remote Jobs
-                  </Link>
+                  <a href="#" >
+                     Sign Up
+                  </a>
                </li>
                <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
                   <Link to="/login" >
@@ -91,18 +104,18 @@ const Footer = () => {
                   </Link>
                </li>
                <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
-                  <Link to="/register" >
-                     Register
+                  <a href="#" >
+                     Post Job
+                  </a>
+               </li>
+               <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
+                  <Link to="/remote-jobs" >
+                     Remote Jobs
                   </Link>
                </li>
                <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
                   <a href="#" >
                      Resources
-                  </a>
-               </li>
-               <li className="text-[#9ca3af] text-[15px] hover:text-white transition-colors">
-                  <a href="#" >
-                     Success Stories
                   </a>
                </li>
             </ul>
