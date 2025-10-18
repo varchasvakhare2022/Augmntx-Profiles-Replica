@@ -141,37 +141,37 @@ Apex and Lightning development`
           </button>
 
           {/* Job Title - Centered */}
-          <h1 className="text-center text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
+          <h1 className="text-center text-4xl md:text-5xl font-serif font-bold text-[#2d3748] mb-6 leading-tight" style={{ fontFamily: 'Georgia, serif' }}>
             {job.title}
           </h1>
 
           {/* Job Meta Info - Centered */}
-          <div className="flex flex-wrap justify-center items-center gap-4 text-gray-500 mb-12 text-sm">
+          <div className="flex flex-wrap justify-center items-center gap-3 text-gray-500 mb-12 text-sm">
             <div className="flex items-center gap-2">
               <FaBriefcase className="text-gray-400" size={14} />
-              <span>{job.type}</span>
+              <span className="text-gray-600">{job.type}</span>
             </div>
-            <span className="text-gray-300">•</span>
+            <span className="text-gray-400">•</span>
             <div className="flex items-center gap-2">
               <FaMapMarkerAlt className="text-gray-400" size={14} />
-              <span>{job.location}</span>
+              <span className="text-gray-600">{job.location}</span>
             </div>
-            <span className="text-gray-300">•</span>
+            <span className="text-gray-400">•</span>
             <div className="flex items-center gap-2">
               <span className="text-gray-400">🏢</span>
-              <span>Remote</span>
+              <span className="text-gray-600">Remote</span>
             </div>
-            <span className="text-gray-300">•</span>
+            <span className="text-gray-400">•</span>
             <div className="flex items-center gap-2">
               <span className="text-gray-400">⏱️</span>
-              <span>{job.experience}</span>
+              <span className="text-gray-600">{job.experience}</span>
             </div>
           </div>
 
           {/* Mandatory Technical Skills and Apply Section */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-8">
             <div className="flex-1">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Mandatory Technical Skills:</h2>
+              <h2 className="text-base font-semibold text-[#2d3748] mb-4">Mandatory Technical Skills:</h2>
               <div className="flex flex-wrap gap-2">
                 {job.skills.map(skill => (
                   <span
@@ -188,7 +188,7 @@ Apex and Lightning development`
             <div className="flex items-center gap-6">
               <div className="text-center">
                 <div className="w-24 h-24 rounded-full border-8 border-gray-300 mb-2 mx-auto"></div>
-                <p className="text-sm text-gray-600 font-medium">Match %</p>
+                <p className="text-sm text-gray-700 font-medium">Match %</p>
                 <p className="text-xs text-gray-500">unavailable</p>
               </div>
               <Link
@@ -203,8 +203,8 @@ Apex and Lightning development`
 
           {/* Job Description */}
           <div className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Job Description</h2>
-            <div className="text-gray-600 whitespace-pre-line leading-relaxed text-base">
+            <h2 className="text-xl font-semibold text-[#2d3748] mb-6">Job Description</h2>
+            <div className="text-gray-700 whitespace-pre-line leading-relaxed text-base">
               {job.description}
             </div>
           </div>
@@ -217,12 +217,12 @@ Apex and Lightning development`
           {/* Interview Details */}
           <div className="space-y-4 mb-8 py-6">
             <div className="flex justify-between items-center">
-              <h3 className="font-semibold text-gray-900 text-lg">Interview Rounds:</h3>
-              <p className="text-gray-700 text-lg">{job.interviewRounds}</p>
+              <h3 className="font-semibold text-[#2d3748] text-base">Interview Rounds:</h3>
+              <p className="text-gray-700 text-base">{job.interviewRounds}</p>
             </div>
             <div className="flex justify-between items-center">
-              <h3 className="font-semibold text-gray-900 text-lg">Valid Through:</h3>
-              <p className="text-blue-600 text-lg">{job.validThrough}</p>
+              <h3 className="font-semibold text-[#2d3748] text-base">Valid Through:</h3>
+              <p className="text-blue-600 text-base">{job.validThrough}</p>
             </div>
           </div>
 
@@ -237,7 +237,7 @@ Apex and Lightning development`
             </Link>
             <div className="text-center">
               <div className="w-20 h-20 rounded-full border-8 border-gray-300 mb-2 mx-auto"></div>
-              <p className="text-sm text-gray-600 font-medium">Match %</p>
+              <p className="text-sm text-gray-700 font-medium">Match %</p>
               <p className="text-xs text-gray-500">unavailable</p>
             </div>
           </div>
