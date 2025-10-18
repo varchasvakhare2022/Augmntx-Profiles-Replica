@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { FaMapMarkerAlt, FaBriefcase, FaShare, FaArrowLeft } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaBriefcase, FaShare, FaArrowLeft, FaPaperPlane } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 
 const JobDetail = () => {
@@ -169,7 +169,7 @@ Apex and Lightning development`
           </div>
 
           {/* Mandatory Technical Skills and Apply Section */}
-          <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-8">
             <div className="flex-1">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Mandatory Technical Skills:</h2>
               <div className="flex flex-wrap gap-2">
@@ -187,16 +187,16 @@ Apex and Lightning development`
             {/* Apply and Match Section */}
             <div className="flex items-center gap-6">
               <div className="text-center">
-                <div className="w-24 h-24 rounded-full bg-gray-200 mb-2 mx-auto"></div>
+                <div className="w-24 h-24 rounded-full border-8 border-gray-300 mb-2 mx-auto"></div>
                 <p className="text-sm text-gray-600 font-medium">Match %</p>
                 <p className="text-xs text-gray-500">unavailable</p>
               </div>
               <Link
                 to="/login"
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center gap-2 whitespace-nowrap"
+                className="bg-[#5271FF] text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center gap-2 whitespace-nowrap text-base"
               >
                 Apply
-                <span>→</span>
+                <FaPaperPlane className="text-sm" />
               </Link>
             </div>
           </div>
@@ -230,13 +230,13 @@ Apex and Lightning development`
           <div className="flex items-center gap-6 pt-6">
             <Link
               to="/login"
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center gap-2"
+              className="bg-[#5271FF] text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center gap-2 text-base"
             >
               Apply
-              <span>→</span>
+              <FaPaperPlane className="text-sm" />
             </Link>
             <div className="text-center">
-              <div className="w-20 h-20 rounded-full bg-gray-200 mb-2 mx-auto"></div>
+              <div className="w-20 h-20 rounded-full border-8 border-gray-300 mb-2 mx-auto"></div>
               <p className="text-sm text-gray-600 font-medium">Match %</p>
               <p className="text-xs text-gray-500">unavailable</p>
             </div>
