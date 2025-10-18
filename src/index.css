@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Start Global Rules */
+* {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: 'Manrope', sans-serif;
+   background-color: #fefefe;
+}
+
+a {
+   text-decoration: none;
+}
+
+ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+img,
+svg {
+   vertical-align: middle;
+}
+
+.container {
+   padding-left: 15px;
+   padding-right: 15px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+   .container {
+      width: 750px;
+   }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+   .container {
+      width: 970px;
+   }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+   .container {
+      width: 1170px;
+   }
+}
+
+.shadow {
+   padding: 12px;
+   border-radius: 0.4rem;
+   box-shadow: 0rem 0.25rem 1.75rem rgba(30, 34, 40, 0.07);
+}
+
+.img-shadow {
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.ser:focus {
+   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.title {
+   position: relative;
+}
+
+.title::before {
+   position: absolute;
+   content: '';
+   background-color: black;
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   left: -5px;
+   top: 50%;
+   transform: translateY(-50%);
+}
+
+.icon {
+   box-shadow: 3px 5px 4px 0 rgb(82 113 255);
+}
+
+.show {
+   display: flex;
+   flex-direction: column;
+   gap: 0;
+   opacity: 0;
+   transition: 0.3s;
+}
+
+.icon-1:hover .show {
+   opacity: 1;
+   gap: 20px;
+}
+
+/* Register page */
+.font {
+   font-family: 'DM Serif Display', serif;
+}
