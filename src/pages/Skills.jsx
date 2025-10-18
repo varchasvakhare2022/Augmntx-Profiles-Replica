@@ -52,48 +52,48 @@ const Skills = () => {
    }
 
    return (
-      <div className='pt-[80px] pb-[60px] bg-gray-50 min-h-screen'>
-         <div className='container mx-auto px-4 lg:px-8'>
+      <div className='pt-[80px] pb-[60px] bg-white min-h-screen'>
+         <div className='container mx-auto px-4 lg:px-8 max-w-[1400px]'>
             <div className='flex flex-col lg:flex-row gap-8'>
                {/* Left Sidebar */}
                <aside className='lg:w-[280px] flex-shrink-0'>
-                  <div className='mb-10'>
-                     <h3 className='text-xl font-semibold text-gray-900 mb-4'>Hiring resources</h3>
+                  <div className='mb-12'>
+                     <h3 className='text-lg font-semibold text-[#2d3748] mb-5'>Hiring resources</h3>
                      <ul className='space-y-3'>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
-                              Guide to Hiring devs <span className='ml-2 text-gray-400'>→</span>
+                           <a href='#' className='text-[#718096] hover:text-blue-600 flex items-center text-[15px] transition-colors'>
+                              Guide to Hiring devs <span className='ml-2 text-[#cbd5e0]'>→</span>
                            </a>
                         </li>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
-                              Job Template <span className='ml-2 text-gray-400'>→</span>
+                           <a href='#' className='text-[#718096] hover:text-blue-600 flex items-center text-[15px] transition-colors'>
+                              Job Template <span className='ml-2 text-[#cbd5e0]'>→</span>
                            </a>
                         </li>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
-                              Interview Questions <span className='ml-2 text-gray-400'>→</span>
+                           <a href='#' className='text-[#718096] hover:text-blue-600 flex items-center text-[15px] transition-colors'>
+                              Interview Questions <span className='ml-2 text-[#cbd5e0]'>→</span>
                            </a>
                         </li>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
-                              Common Mistakes <span className='ml-2 text-gray-400'>→</span>
+                           <a href='#' className='text-[#718096] hover:text-blue-600 flex items-center text-[15px] transition-colors'>
+                              Common Mistakes <span className='ml-2 text-[#cbd5e0]'>→</span>
                            </a>
                         </li>
                      </ul>
                   </div>
 
                   <div className='mb-10'>
-                     <h3 className='text-xl font-semibold text-gray-900 mb-4'>Need help?</h3>
+                     <h3 className='text-lg font-semibold text-[#2d3748] mb-5'>Need help?</h3>
                      <ul className='space-y-3'>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
-                              Book a meeting <span className='ml-2 text-gray-400'>→</span>
+                           <a href='#' className='text-[#718096] hover:text-blue-600 flex items-center text-[15px] transition-colors'>
+                              Book a meeting <span className='ml-2 text-[#cbd5e0]'>→</span>
                            </a>
                         </li>
                         <li>
-                           <a href='#' className='text-gray-600 hover:text-blue-600 flex items-center text-sm transition-colors'>
-                              Chat with an expert <span className='ml-2 text-gray-400'>→</span>
+                           <a href='#' className='text-[#718096] hover:text-blue-600 flex items-center text-[15px] transition-colors'>
+                              Chat with an expert <span className='ml-2 text-[#cbd5e0]'>→</span>
                            </a>
                         </li>
                      </ul>
@@ -102,8 +102,8 @@ const Skills = () => {
 
                {/* Main Content */}
                <main className='flex-1'>
-                  <h1 className='text-3xl lg:text-4xl font-normal text-gray-800 mb-8'>
-                     Hire Talents with skills in <span className='text-blue-600 font-normal'>{formatSkillName(skill)}</span>
+                  <h1 className='text-3xl lg:text-4xl font-normal text-[#2d3748] mb-10'>
+                     Hire Talents with skills in <span className='text-[#5271FF] font-normal'>{formatSkillName(skill)}</span>
                   </h1>
 
                   {isLoading ? (
@@ -121,7 +121,7 @@ const Skills = () => {
                            return (
                               <div 
                                  key={id} 
-                                 className='bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer border border-gray-100'
+                                 className='bg-[#f9fafb] rounded-lg p-6 hover:shadow-md transition-shadow cursor-pointer border border-[#e5e7eb]'
                                  onClick={() => goUser(profile_url, unique_id)}
                               >
                                  <div className='flex gap-4 mb-4'>
@@ -138,19 +138,19 @@ const Skills = () => {
                                     </div>
                                     <div className='flex-1 min-w-0'>
                                        <div className='flex items-center gap-2 mb-1'>
-                                          <h3 className='font-semibold text-gray-900 text-lg truncate'>
+                                          <h3 className='font-semibold text-[#2d3748] text-[17px] truncate'>
                                              {first_name} {last_name}
                                           </h3>
-                                          <span className='text-xs text-red-400 font-medium'>{unique_id}</span>
+                                          <span className='text-[11px] text-[#fc8181] font-medium'>{unique_id}</span>
                                        </div>
-                                       <p className='text-sm text-gray-700 font-medium mb-2'>
+                                       <p className='text-[14px] text-[#2d3748] font-normal mb-2'>
                                           {primary_title}, {experience == 0 ? '1 year' : `${experience} years`}
                                        </p>
                                        <div className='flex flex-wrap gap-2'>
                                           {skills.slice(0, 3).map((sk, index) => (
                                              <span 
                                                 key={index} 
-                                                className='text-xs px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-blue-700'
+                                                className='text-[12px] px-3 py-1 rounded-full border border-[#5271FF] bg-white text-[#5271FF]'
                                              >
                                                 {sk}
                                              </span>
@@ -159,12 +159,12 @@ const Skills = () => {
                                     </div>
                                  </div>
                                  
-                                 <p className='text-sm text-gray-600 mb-3 line-clamp-3'>
+                                 <p className='text-[14px] text-[#4a5568] mb-3 leading-relaxed'>
                                     {bio || 'No bio available'}
                                  </p>
                                  
                                  {profile_industries && profile_industries.length > 0 && (
-                                    <p className='text-xs text-gray-500'>
+                                    <p className='text-[13px] text-[#4a5568]'>
                                        <span className='font-medium'>Industries: </span>
                                        {profile_industries.slice(0, 3).map((industry, idx) => (
                                           <span key={idx}>
