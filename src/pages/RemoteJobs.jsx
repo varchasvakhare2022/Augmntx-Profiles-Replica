@@ -933,11 +933,11 @@ const RemoteJobs = () => {
                   Years of Experience
                 </h3>
                 <div className="px-2">
-                  <div className="relative">
+                  <div className="relative pt-2 pb-2">
                     {/* Dual Range Slider */}
-                    <div className="relative h-2 bg-gray-200 rounded-lg mb-1">
+                    <div className="relative h-2 bg-gray-200 rounded-lg">
                       <div 
-                        className="absolute h-2 bg-blue-600 rounded-lg pointer-events-none"
+                        className="absolute h-2 bg-blue-600 rounded-lg"
                         style={{
                           left: `${(experienceRange[0] / 30) * 100}%`,
                           width: `${((experienceRange[1] - experienceRange[0]) / 30) * 100}%`
@@ -954,8 +954,7 @@ const RemoteJobs = () => {
                             setExperienceRange([value, experienceRange[1]])
                           }
                         }}
-                        className="absolute w-full top-0 h-2 bg-transparent appearance-none cursor-pointer slider-thumb-left pointer-events-none"
-                        style={{ zIndex: experienceRange[0] > experienceRange[1] - 5 ? 5 : 3 }}
+                        className="range-slider-thumb range-slider-min"
                       />
                       <input
                         type="range"
@@ -968,8 +967,7 @@ const RemoteJobs = () => {
                             setExperienceRange([experienceRange[0], value])
                           }
                         }}
-                        className="absolute w-full top-0 h-2 bg-transparent appearance-none cursor-pointer slider-thumb-right pointer-events-none"
-                        style={{ zIndex: 4 }}
+                        className="range-slider-thumb range-slider-max"
                       />
                     </div>
                     
@@ -1210,57 +1208,60 @@ const RemoteJobs = () => {
       )}
       
       <style>{`
-        .slider-thumb-left::-webkit-slider-thumb,
-        .slider-thumb-right::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          pointer-events: auto;
-          height: 18px;
-          width: 18px;
-          border-radius: 50%;
-          background: #5271FF;
-          cursor: pointer;
-          border: 3px solid #ffffff;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-          position: relative;
-        }
-        
-        .slider-thumb-left::-moz-range-thumb,
-        .slider-thumb-right::-moz-range-thumb {
-          pointer-events: auto;
-          height: 18px;
-          width: 18px;
-          border-radius: 50%;
-          background: #5271FF;
-          cursor: pointer;
-          border: 3px solid #ffffff;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .slider-thumb-left::-webkit-slider-runnable-track,
-        .slider-thumb-right::-webkit-slider-runnable-track {
+        .range-slider-thumb {
+          position: absolute;
           width: 100%;
           height: 8px;
-          background: transparent;
-          border: none;
-          border-radius: 4px;
-        }
-        
-        .slider-thumb-left::-moz-range-track,
-        .slider-thumb-right::-moz-range-track {
-          width: 100%;
-          height: 8px;
-          background: transparent;
-          border: none;
-          border-radius: 4px;
-        }
-        
-        input[type="range"].slider-thumb-left,
-        input[type="range"].slider-thumb-right {
+          top: 0;
           -webkit-appearance: none;
           appearance: none;
           background: transparent;
+          pointer-events: none;
           outline: none;
+        }
+        
+        .range-slider-min {
+          z-index: 3;
+        }
+        
+        .range-slider-max {
+          z-index: 4;
+        }
+        
+        .range-slider-thumb::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #5271FF;
+          cursor: pointer;
+          pointer-events: all;
+          border: 3px solid white;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .range-slider-thumb::-moz-range-thumb {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: #5271FF;
+          cursor: pointer;
+          pointer-events: all;
+          border: 3px solid white;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .range-slider-thumb::-webkit-slider-runnable-track {
+          width: 100%;
+          height: 8px;
+          background: transparent;
+        }
+        
+        .range-slider-thumb::-moz-range-track {
+          width: 100%;
+          height: 8px;
+          background: transparent;
         }
       `}</style>
     </div>
