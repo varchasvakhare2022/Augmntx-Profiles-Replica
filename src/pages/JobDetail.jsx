@@ -215,14 +215,14 @@ Apex and Lightning development`
           </div>
 
           {/* Interview Details */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 py-6 border-t border-gray-200">
-            <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Interview Rounds:</h3>
-              <p className="text-gray-600">{job.interviewRounds}</p>
+          <div className="space-y-4 mb-8 py-6">
+            <div className="flex justify-between items-center">
+              <h3 className="font-semibold text-gray-900 text-lg">Interview Rounds:</h3>
+              <p className="text-gray-700 text-lg">{job.interviewRounds}</p>
             </div>
-            <div>
-              <h3 className="font-semibold text-gray-900 mb-2">Valid Through:</h3>
-              <p className="text-gray-600">{job.validThrough}</p>
+            <div className="flex justify-between items-center">
+              <h3 className="font-semibold text-gray-900 text-lg">Valid Through:</h3>
+              <p className="text-blue-600 text-lg">{job.validThrough}</p>
             </div>
           </div>
 
