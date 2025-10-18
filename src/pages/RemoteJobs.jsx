@@ -935,9 +935,9 @@ const RemoteJobs = () => {
                 <div className="px-2">
                   <div className="relative">
                     {/* Dual Range Slider */}
-                    <div className="relative h-2 bg-gray-200 rounded-lg">
+                    <div className="relative h-2 bg-gray-200 rounded-lg mb-1">
                       <div 
-                        className="absolute h-2 bg-blue-600 rounded-lg"
+                        className="absolute h-2 bg-blue-600 rounded-lg pointer-events-none"
                         style={{
                           left: `${(experienceRange[0] / 30) * 100}%`,
                           width: `${((experienceRange[1] - experienceRange[0]) / 30) * 100}%`
@@ -954,7 +954,8 @@ const RemoteJobs = () => {
                             setExperienceRange([value, experienceRange[1]])
                           }
                         }}
-                        className="absolute w-full h-2 bg-transparent appearance-none cursor-pointer slider-thumb-left"
+                        className="absolute w-full top-0 h-2 bg-transparent appearance-none cursor-pointer slider-thumb-left pointer-events-none"
+                        style={{ zIndex: experienceRange[0] > experienceRange[1] - 5 ? 5 : 3 }}
                       />
                       <input
                         type="range"
@@ -967,7 +968,8 @@ const RemoteJobs = () => {
                             setExperienceRange([experienceRange[0], value])
                           }
                         }}
-                        className="absolute w-full h-2 bg-transparent appearance-none cursor-pointer slider-thumb-right"
+                        className="absolute w-full top-0 h-2 bg-transparent appearance-none cursor-pointer slider-thumb-right pointer-events-none"
+                        style={{ zIndex: 4 }}
                       />
                     </div>
                     
@@ -1207,30 +1209,27 @@ const RemoteJobs = () => {
         </div>
       )}
       
-      <style jsx>{`
-        .slider-thumb-left,
-        .slider-thumb-right {
-          pointer-events: none;
-        }
-        
+      <style>{`
         .slider-thumb-left::-webkit-slider-thumb,
         .slider-thumb-right::-webkit-slider-thumb {
+          -webkit-appearance: none;
           appearance: none;
           pointer-events: auto;
-          height: 20px;
-          width: 20px;
+          height: 18px;
+          width: 18px;
           border-radius: 50%;
           background: #5271FF;
           cursor: pointer;
           border: 3px solid #ffffff;
           box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+          position: relative;
         }
         
         .slider-thumb-left::-moz-range-thumb,
         .slider-thumb-right::-moz-range-thumb {
           pointer-events: auto;
-          height: 20px;
-          width: 20px;
+          height: 18px;
+          width: 18px;
           border-radius: 50%;
           background: #5271FF;
           cursor: pointer;
@@ -1238,29 +1237,30 @@ const RemoteJobs = () => {
           box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
-        .slider-thumb-left::-webkit-slider-track,
-        .slider-thumb-right::-webkit-slider-track {
-          background: transparent;
+        .slider-thumb-left::-webkit-slider-runnable-track,
+        .slider-thumb-right::-webkit-slider-runnable-track {
+          width: 100%;
           height: 8px;
+          background: transparent;
+          border: none;
           border-radius: 4px;
         }
         
         .slider-thumb-left::-moz-range-track,
         .slider-thumb-right::-moz-range-track {
-          background: transparent;
+          width: 100%;
           height: 8px;
-          border-radius: 4px;
+          background: transparent;
           border: none;
+          border-radius: 4px;
         }
         
-        .slider-thumb-right {
-          position: relative;
-          z-index: 4;
-        }
-        
-        .slider-thumb-left {
-          position: relative;
-          z-index: 3;
+        input[type="range"].slider-thumb-left,
+        input[type="range"].slider-thumb-right {
+          -webkit-appearance: none;
+          appearance: none;
+          background: transparent;
+          outline: none;
         }
       `}</style>
     </div>
